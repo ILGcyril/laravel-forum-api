@@ -25,3 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/posts/{post}/like', [LikeController::class, 'togglePost']);
     Route::post('/comments/{comment}/like', [LikeController::class, 'toggleComment']);
 });
+Route::get('/topics', [TopicController::class, 'index']);
+Route::get('/topics/{topic}', [TopicController::class, 'show']);
+Route::get('/topics/{topic}/posts', [PostController::class, 'index']);
+Route::get('/topics/{topic}/posts/{post}', [PostController::class, 'show']);
